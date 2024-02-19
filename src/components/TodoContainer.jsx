@@ -1,15 +1,12 @@
 import React from "react";
+import Todo from "./Todo";
 
-function TodoContainer() {
+function TodoContainer({ todos }) {
   return (
     <div className="container">
-      <div className="todo">
-        <p>Go to gym</p>
-        <div className="actions">
-          <input type="checkbox" />
-          <button>Delete</button>
-        </div>
-      </div>
+      {todos.map((todo) => {
+        return <Todo todo={todo} />;
+      })}
     </div>
   );
 }
